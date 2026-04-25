@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Vehicle inspection visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07090b"/>
+      <stop offset="0.6" stop-color="#0a0c10"/>
+      <stop offset="1" stop-color="#06070a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="65%" cy="35%" r="65%">
+      <stop offset="0" stop-color="#3ee089" stop-opacity="0.28"/>
+      <stop offset="0.55" stop-color="#3ee089" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#3ee089" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feColorMatrix in="b" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 .65 0" />
+    </filter>
+    <linearGradient id="car" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1a1f27"/>
+      <stop offset="0.55" stop-color="#10151c"/>
+      <stop offset="1" stop-color="#0b0f15"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <rect width="1600" height="900" fill="url(#grid)" opacity="1"/>
+
+  <!-- Accent haze -->
+  <g filter="url(#soft)">
+    <circle cx="1140" cy="260" r="180" fill="#3ee089" opacity="0.22"/>
+    <circle cx="980" cy="420" r="220" fill="#3ee089" opacity="0.10"/>
+  </g>
+
+  <!-- Vehicle silhouette (generic, no brand) -->
+  <g transform="translate(190,135)">
+    <path d="M170 470
+             C245 395, 365 325, 515 305
+             C610 293, 740 292, 880 318
+             C990 338, 1100 390, 1180 455
+             C1225 492, 1240 525, 1234 558
+             L1226 600
+             C1222 628, 1198 650, 1168 656
+             L1090 672
+             C1024 686, 950 688, 875 684
+             L640 670
+             C560 665, 472 673, 400 694
+             L330 715
+             C274 732, 220 705, 206 648
+             L190 582
+             C179 539, 188 505, 170 470 Z"
+          fill="url(#car)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+
+    <!-- Roof / glass line -->
+    <path d="M332 452
+             C412 382, 520 340, 635 332
+             C735 325, 845 344, 936 380
+             C1008 409, 1063 444, 1098 478"
+          fill="none" stroke="url(#rim)" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+
+    <!-- Wheels -->
+    <g>
+      <circle cx="400" cy="655" r="72" fill="#050607" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+      <circle cx="400" cy="655" r="40" fill="none" stroke="#3ee089" stroke-opacity="0.25" stroke-width="2"/>
+      <circle cx="1040" cy="640" r="78" fill="#050607" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+      <circle cx="1040" cy="640" r="44" fill="none" stroke="#3ee089" stroke-opacity="0.25" stroke-width="2"/>
+    </g>
+
+    <!-- Subtle highlights -->
+    <path d="M265 520 C365 440, 520 400, 700 408 C875 416, 1012 476, 1148 560"
+          fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Vision overlays -->
+  <g font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+    <!-- Bounding boxes -->
+    <g fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="2">
+      <rect x="460" y="430" width="360" height="200" rx="14"/>
+      <rect x="820" y="455" width="420" height="240" rx="14"/>
+      <rect x="520" y="600" width="250" height="170" rx="14"/>
+    </g>
+    <!-- Segmentation-style outline -->
+    <path d="M520 625
+             C560 602, 614 594, 675 606
+             C720 615, 758 640, 780 680
+             C796 708, 792 736, 770 756
+             C742 782, 690 792, 635 782
+             C586 773, 545 748, 522 712
+             C506 687, 505 651, 520 625 Z"
+          fill="none" stroke="#3ee089" stroke-opacity="0.75" stroke-width="3"/>
+
+    <!-- Callouts -->
+    <g stroke="#3ee089" stroke-opacity="0.75" stroke-width="2" fill="none">
+      <path d="M760 520 L650 468" />
+      <path d="M1035 620 L1180 545" />
+      <path d="M640 720 L520 760" />
+      <circle cx="650" cy="468" r="5" fill="#3ee089" stroke="none"/>
+      <circle cx="1180" cy="545" r="5" fill="#3ee089" stroke="none"/>
+      <circle cx="520" cy="760" r="5" fill="#3ee089" stroke="none"/>
+    </g>
+
+    <!-- Minimal readouts without readable text -->
+    <g fill="#ffffff" fill-opacity="0.55">
+      <rect x="1188" y="530" width="120" height="10" rx="5" opacity="0.45"/>
+      <rect x="1188" y="548" width="92" height="10" rx="5" opacity="0.32"/>
+      <rect x="1188" y="566" width="104" height="10" rx="5" opacity="0.26"/>
+    </g>
+  </g>
+</svg>

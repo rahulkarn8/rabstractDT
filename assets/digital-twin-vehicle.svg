@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Digital twin vehicle visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06070a"/>
+      <stop offset="0.55" stop-color="#0a0c10"/>
+      <stop offset="1" stop-color="#050608"/>
+    </linearGradient>
+    <radialGradient id="g" cx="45%" cy="40%" r="70%">
+      <stop offset="0" stop-color="#3ee089" stop-opacity="0.20"/>
+      <stop offset="0.55" stop-color="#3ee089" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#3ee089" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1b212a"/>
+      <stop offset="0.5" stop-color="#111720"/>
+      <stop offset="1" stop-color="#0b0f15"/>
+    </linearGradient>
+    <clipPath id="leftHalf">
+      <rect x="0" y="0" width="800" height="900"/>
+    </clipPath>
+    <clipPath id="rightHalf">
+      <rect x="800" y="0" width="800" height="900"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <!-- Axis -->
+  <g opacity="0.65" stroke-width="3" stroke-linecap="round">
+    <path d="M260 740 L380 740" stroke="#3ee089"/>
+    <path d="M260 740 L260 620" stroke="#ffffff" stroke-opacity="0.35"/>
+    <path d="M260 740 L180 800" stroke="#ffffff" stroke-opacity="0.22"/>
+  </g>
+
+  <!-- Base vehicle path (used by both halves) -->
+  <g transform="translate(220,150)">
+    <!-- Solid half -->
+    <g clip-path="url(#leftHalf)">
+      <path d="M140 480
+               C220 395, 355 326, 520 308
+               C630 296, 770 300, 910 334
+               C1020 360, 1120 420, 1190 490
+               C1230 530, 1240 560, 1233 590
+               L1223 635
+               C1215 670, 1185 695, 1148 702
+               L1045 720
+               C970 733, 884 733, 800 726
+               L610 710
+               C528 703, 445 712, 380 734
+               L300 760
+               C245 778, 205 744, 192 690
+               L175 620
+               C165 578, 170 530, 140 480 Z"
+            fill="url(#metal)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+      <path d="M300 468
+               C392 388, 520 346, 652 342
+               C760 339, 876 364, 970 410
+               C1040 444, 1090 482, 1128 520"
+            fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="3" stroke-linecap="round"/>
+      <g>
+        <circle cx="400" cy="700" r="74" fill="#050607" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+        <circle cx="1040" cy="682" r="80" fill="#050607" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+      </g>
+      <!-- Defect pins -->
+      <g>
+        <circle cx="650" cy="540" r="6" fill="#3ee089" opacity="0.95"/>
+        <circle cx="720" cy="585" r="6" fill="#3ee089" opacity="0.85"/>
+        <circle cx="560" cy="610" r="6" fill="#3ee089" opacity="0.75"/>
+      </g>
+    </g>
+
+    <!-- Wireframe / twin half -->
+    <g clip-path="url(#rightHalf)">
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.20" stroke-width="2">
+        <path d="M140 480
+                 C220 395, 355 326, 520 308
+                 C630 296, 770 300, 910 334
+                 C1020 360, 1120 420, 1190 490
+                 C1230 530, 1240 560, 1233 590
+                 L1223 635
+                 C1215 670, 1185 695, 1148 702
+                 L1045 720
+                 C970 733, 884 733, 800 726
+                 L610 710
+                 C528 703, 445 712, 380 734
+                 L300 760
+                 C245 778, 205 744, 192 690
+                 L175 620
+                 C165 578, 170 530, 140 480 Z"/>
+        <path d="M300 468
+                 C392 388, 520 346, 652 342
+                 C760 339, 876 364, 970 410
+                 C1040 444, 1090 482, 1128 520"/>
+        <ellipse cx="400" cy="700" rx="74" ry="74"/>
+        <ellipse cx="1040" cy="682" rx="80" ry="80"/>
+      </g>
+
+      <!-- Mesh lines -->
+      <g stroke="#3ee089" stroke-opacity="0.22" stroke-width="1.5">
+        <path d="M240 620 C420 560, 650 540, 920 560 C1060 570, 1140 595, 1210 625" fill="none"/>
+        <path d="M220 590 C420 520, 680 500, 980 520 C1120 530, 1200 560, 1230 590" fill="none"/>
+        <path d="M260 660 C460 620, 690 615, 940 640 C1080 654, 1165 678, 1218 702" fill="none"/>
+        <path d="M360 420 C520 370, 720 360, 930 400 C1040 420, 1100 452, 1140 492" fill="none"/>
+      </g>
+
+      <!-- Point cloud -->
+      <g fill="#ffffff" fill-opacity="0.35">
+        <circle cx="560" cy="520" r="2.2"/>
+        <circle cx="585" cy="545" r="2.2"/>
+        <circle cx="620" cy="565" r="2.2"/>
+        <circle cx="665" cy="585" r="2.2"/>
+        <circle cx="705" cy="600" r="2.2"/>
+        <circle cx="745" cy="610" r="2.2"/>
+        <circle cx="790" cy="615" r="2.2"/>
+        <circle cx="835" cy="612" r="2.2"/>
+        <circle cx="875" cy="604" r="2.2"/>
+        <circle cx="915" cy="592" r="2.2"/>
+        <circle cx="950" cy="576" r="2.2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Center split line -->
+  <rect x="798" y="0" width="4" height="900" fill="#ffffff" opacity="0.06"/>
+</svg>
