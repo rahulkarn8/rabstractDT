@@ -75,11 +75,228 @@
           <div class="hero-visual" aria-hidden="true">
             <div class="media-stack">
               <figure class="media-card">
-                <img src="assets/vehicle-inspection.svg" alt="" loading="lazy" />
+                <div class="inline-svg" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Vehicle inspection visualization">
+                    <defs>
+                      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#07090b"/>
+                        <stop offset="0.6" stop-color="#0a0c10"/>
+                        <stop offset="1" stop-color="#06070a"/>
+                      </linearGradient>
+                      <radialGradient id="glow" cx="65%" cy="35%" r="65%">
+                        <stop offset="0" stop-color="#3ee089" stop-opacity="0.28"/>
+                        <stop offset="0.55" stop-color="#3ee089" stop-opacity="0.10"/>
+                        <stop offset="1" stop-color="#3ee089" stop-opacity="0"/>
+                      </radialGradient>
+                      <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+                        <path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity="0.085" stroke-width="1"/>
+                      </pattern>
+                      <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="10" result="b"/>
+                        <feColorMatrix in="b" type="matrix"
+                          values="1 0 0 0 0
+                                  0 1 0 0 0
+                                  0 0 1 0 0
+                                  0 0 0 .65 0" />
+                      </filter>
+                      <linearGradient id="car" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#1a1f27"/>
+                        <stop offset="0.55" stop-color="#10151c"/>
+                        <stop offset="1" stop-color="#0b0f15"/>
+                      </linearGradient>
+                      <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#ffffff" stop-opacity="0.20"/>
+                        <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <rect width="1600" height="900" fill="url(#bg)"/>
+                    <rect width="1600" height="900" fill="url(#glow)"/>
+                    <rect width="1600" height="900" fill="url(#grid)" opacity="1"/>
+                    <g filter="url(#soft)">
+                      <circle cx="1140" cy="260" r="200" fill="#3ee089" opacity="0.30"/>
+                      <circle cx="980" cy="420" r="240" fill="#3ee089" opacity="0.14"/>
+                    </g>
+                    <g transform="translate(190,135)">
+                      <path d="M170 470
+                               C245 395, 365 325, 515 305
+                               C610 293, 740 292, 880 318
+                               C990 338, 1100 390, 1180 455
+                               C1225 492, 1240 525, 1234 558
+                               L1226 600
+                               C1222 628, 1198 650, 1168 656
+                               L1090 672
+                               C1024 686, 950 688, 875 684
+                               L640 670
+                               C560 665, 472 673, 400 694
+                               L330 715
+                               C274 732, 220 705, 206 648
+                               L190 582
+                               C179 539, 188 505, 170 470 Z"
+                            fill="url(#car)" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2.5"/>
+                      <path d="M332 452
+                               C412 382, 520 340, 635 332
+                               C735 325, 845 344, 936 380
+                               C1008 409, 1063 444, 1098 478"
+                            fill="none" stroke="url(#rim)" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+                      <g>
+                        <circle cx="400" cy="655" r="72" fill="#050607" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+                        <circle cx="400" cy="655" r="40" fill="none" stroke="#3ee089" stroke-opacity="0.25" stroke-width="2"/>
+                        <circle cx="1040" cy="640" r="78" fill="#050607" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+                        <circle cx="1040" cy="640" r="44" fill="none" stroke="#3ee089" stroke-opacity="0.25" stroke-width="2"/>
+                      </g>
+                      <path d="M265 520 C365 440, 520 400, 700 408 C875 416, 1012 476, 1148 560"
+                            fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2.2" stroke-linecap="round"/>
+                    </g>
+                    <g font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+                      <g fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="2">
+                        <rect x="460" y="430" width="360" height="200" rx="14"/>
+                        <rect x="820" y="455" width="420" height="240" rx="14"/>
+                        <rect x="520" y="600" width="250" height="170" rx="14"/>
+                      </g>
+                      <path d="M520 625
+                               C560 602, 614 594, 675 606
+                               C720 615, 758 640, 780 680
+                               C796 708, 792 736, 770 756
+                               C742 782, 690 792, 635 782
+                               C586 773, 545 748, 522 712
+                               C506 687, 505 651, 520 625 Z"
+                            fill="none" stroke="#3ee089" stroke-opacity="0.75" stroke-width="3"/>
+                      <g stroke="#3ee089" stroke-opacity="0.75" stroke-width="2" fill="none">
+                        <path d="M760 520 L650 468" />
+                        <path d="M1035 620 L1180 545" />
+                        <path d="M640 720 L520 760" />
+                        <circle cx="650" cy="468" r="5" fill="#3ee089" stroke="none"/>
+                        <circle cx="1180" cy="545" r="5" fill="#3ee089" stroke="none"/>
+                        <circle cx="520" cy="760" r="5" fill="#3ee089" stroke="none"/>
+                      </g>
+                      <g fill="#ffffff" fill-opacity="0.55">
+                        <rect x="1188" y="530" width="120" height="10" rx="5" opacity="0.45"/>
+                        <rect x="1188" y="548" width="92" height="10" rx="5" opacity="0.32"/>
+                        <rect x="1188" y="566" width="104" height="10" rx="5" opacity="0.26"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
                 <figcaption>High-powered vision inspection</figcaption>
               </figure>
               <figure class="media-card">
-                <img src="assets/digital-twin-vehicle.svg" alt="" loading="lazy" />
+                <div class="inline-svg" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Digital twin vehicle visualization">
+                    <defs>
+                      <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#06070a"/>
+                        <stop offset="0.55" stop-color="#0a0c10"/>
+                        <stop offset="1" stop-color="#050608"/>
+                      </linearGradient>
+                      <radialGradient id="g2" cx="45%" cy="40%" r="70%">
+                        <stop offset="0" stop-color="#3ee089" stop-opacity="0.20"/>
+                        <stop offset="0.55" stop-color="#3ee089" stop-opacity="0.08"/>
+                        <stop offset="1" stop-color="#3ee089" stop-opacity="0"/>
+                      </radialGradient>
+                      <pattern id="grid2" width="64" height="64" patternUnits="userSpaceOnUse">
+                        <path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+                      </pattern>
+                      <linearGradient id="metal2" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#1b212a"/>
+                        <stop offset="0.5" stop-color="#111720"/>
+                        <stop offset="1" stop-color="#0b0f15"/>
+                      </linearGradient>
+                      <clipPath id="leftHalf2">
+                        <rect x="0" y="0" width="800" height="900"/>
+                      </clipPath>
+                      <clipPath id="rightHalf2">
+                        <rect x="800" y="0" width="800" height="900"/>
+                      </clipPath>
+                    </defs>
+                    <rect width="1600" height="900" fill="url(#bg2)"/>
+                    <rect width="1600" height="900" fill="url(#g2)"/>
+                    <rect width="1600" height="900" fill="url(#grid2)"/>
+                    <g opacity="0.65" stroke-width="3" stroke-linecap="round">
+                      <path d="M260 740 L380 740" stroke="#3ee089"/>
+                      <path d="M260 740 L260 620" stroke="#ffffff" stroke-opacity="0.35"/>
+                      <path d="M260 740 L180 800" stroke="#ffffff" stroke-opacity="0.22"/>
+                    </g>
+                    <g transform="translate(220,150)">
+                      <g clip-path="url(#leftHalf2)">
+                        <path d="M140 480
+                                 C220 395, 355 326, 520 308
+                                 C630 296, 770 300, 910 334
+                                 C1020 360, 1120 420, 1190 490
+                                 C1230 530, 1240 560, 1233 590
+                                 L1223 635
+                                 C1215 670, 1185 695, 1148 702
+                                 L1045 720
+                                 C970 733, 884 733, 800 726
+                                 L610 710
+                                 C528 703, 445 712, 380 734
+                                 L300 760
+                                 C245 778, 205 744, 192 690
+                                 L175 620
+                                 C165 578, 170 530, 140 480 Z"
+                              fill="url(#metal2)" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2.5"/>
+                        <path d="M300 468
+                                 C392 388, 520 346, 652 342
+                                 C760 339, 876 364, 970 410
+                                 C1040 444, 1090 482, 1128 520"
+                              fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="3" stroke-linecap="round"/>
+                        <g>
+                          <circle cx="400" cy="700" r="74" fill="#050607" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+                          <circle cx="1040" cy="682" r="80" fill="#050607" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+                        </g>
+                        <g>
+                          <circle cx="650" cy="540" r="6" fill="#3ee089" opacity="0.95"/>
+                          <circle cx="720" cy="585" r="6" fill="#3ee089" opacity="0.85"/>
+                          <circle cx="560" cy="610" r="6" fill="#3ee089" opacity="0.75"/>
+                        </g>
+                      </g>
+                      <g clip-path="url(#rightHalf2)">
+                        <g fill="none" stroke="#ffffff" stroke-opacity="0.20" stroke-width="2">
+                          <path d="M140 480
+                                   C220 395, 355 326, 520 308
+                                   C630 296, 770 300, 910 334
+                                   C1020 360, 1120 420, 1190 490
+                                   C1230 530, 1240 560, 1233 590
+                                   L1223 635
+                                   C1215 670, 1185 695, 1148 702
+                                   L1045 720
+                                   C970 733, 884 733, 800 726
+                                   L610 710
+                                   C528 703, 445 712, 380 734
+                                   L300 760
+                                   C245 778, 205 744, 192 690
+                                   L175 620
+                                   C165 578, 170 530, 140 480 Z"/>
+                          <path d="M300 468
+                                   C392 388, 520 346, 652 342
+                                   C760 339, 876 364, 970 410
+                                   C1040 444, 1090 482, 1128 520"/>
+                          <ellipse cx="400" cy="700" rx="74" ry="74"/>
+                          <ellipse cx="1040" cy="682" rx="80" ry="80"/>
+                        </g>
+                        <g stroke="#3ee089" stroke-opacity="0.22" stroke-width="1.5">
+                          <path d="M240 620 C420 560, 650 540, 920 560 C1060 570, 1140 595, 1210 625" fill="none"/>
+                          <path d="M220 590 C420 520, 680 500, 980 520 C1120 530, 1200 560, 1230 590" fill="none"/>
+                          <path d="M260 660 C460 620, 690 615, 940 640 C1080 654, 1165 678, 1218 702" fill="none"/>
+                          <path d="M360 420 C520 370, 720 360, 930 400 C1040 420, 1100 452, 1140 492" fill="none"/>
+                        </g>
+                        <g fill="#ffffff" fill-opacity="0.35">
+                          <circle cx="560" cy="520" r="2.2"/>
+                          <circle cx="585" cy="545" r="2.2"/>
+                          <circle cx="620" cy="565" r="2.2"/>
+                          <circle cx="665" cy="585" r="2.2"/>
+                          <circle cx="705" cy="600" r="2.2"/>
+                          <circle cx="745" cy="610" r="2.2"/>
+                          <circle cx="790" cy="615" r="2.2"/>
+                          <circle cx="835" cy="612" r="2.2"/>
+                          <circle cx="875" cy="604" r="2.2"/>
+                          <circle cx="915" cy="592" r="2.2"/>
+                          <circle cx="950" cy="576" r="2.2"/>
+                        </g>
+                      </g>
+                    </g>
+                    <rect x="798" y="0" width="4" height="900" fill="#ffffff" opacity="0.06"/>
+                  </svg>
+                </div>
                 <figcaption>Digital twin alignment &amp; defect context</figcaption>
               </figure>
             </div>
